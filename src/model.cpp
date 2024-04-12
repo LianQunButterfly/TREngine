@@ -31,10 +31,14 @@ namespace TREngine{
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, indextri.size()* sizeof(int),
             &indextri[0], GL_STATIC_DRAW
                     );
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,  sizeof(GLVector), (void*)0);
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE,  sizeof(GLVector), (void*)(6 * sizeof(float)));
-        glEnableVertexAttribArray(2);
+            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+            glEnableVertexAttribArray(0);
+    // color attribute
+            glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+            glEnableVertexAttribArray(1);
+    // texture coord attribute
+             glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+            glEnableVertexAttribArray(2);
         std:: cout<<sizeof(GLVector)<<std::endl;
         std::cout<<8*sizeof(float)<<std::endl;
        

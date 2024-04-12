@@ -17,6 +17,17 @@ struct GLVector{
         this->g=g;
         this->b=b;
         this->u=u;
+        this->v=v;
+    }
+    GLVector(Vector3f point,Vector3f color){
+        x= point.x;
+        y= point.y;
+        z= point.z;
+        r= color.x;
+        g= color.y;
+        b= color.z;
+        u= 0;
+        v= 0;
     }
     GLVector(Vector3f point ,Vector3f color,Vector3f uv){
         x= point.x;
