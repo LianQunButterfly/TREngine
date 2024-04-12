@@ -1,5 +1,7 @@
 #pragma once
-
+/*
+数学类 目前只有Vector3
+*/
 struct  Vector3f
 {
     float x, y, z;

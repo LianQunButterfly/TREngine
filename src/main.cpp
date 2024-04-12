@@ -2,7 +2,10 @@
 #include <GLFW/glfw3.h>
 #include "math3d.h"
 #include <iostream>
+#include <fstream>  
+
 #include "TRWindows.h"
+#include "glshader.h"
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -14,6 +17,8 @@ int main()
 {
     // glfw: initialize and configure
     // ------------------------------
+    std::string vpath = "vertex.txt";
+    std::string fpath = "fragmet.txt";
     TREngine::TRWindows win;
     win.Init();
     win.createWindow(800,600,"Hello Window");
@@ -23,30 +28,29 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-
+    
+     TREngine::GLShader shader(vpath,fpath);
 /* 
         添加渲染设置
  */
-    Vector3f Vertices[3];
-    Vertices[0] = Vector3f(-1.0f, -1.0f, 0.0f);
-    Vertices[1] = Vector3f(1.0f, -1.0f, 0.0f);
-    Vertices[2] = Vector3f(0.0f, 1.0f, 0.0f);
-    unsigned int VBO;
-    glGenBuffers(1 , &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER,VBO);
-    glBufferData(GL_ARRAY_BUFFER, 3*sizeof(Vector3f), Vertices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-    glEnableVertexAttribArray(0);
+     Vector3f Vertices[4];
+    Vertices[0] = Vector3f(0.0, 0.0, 0.0f);
 
+    unsigned int VBO;
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+
+   
     while (!glfwWindowShouldClose(win.getWindow()))
     {
 
 
-        
-        glClearColor(0, 0, 0, 1);
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-
+       
+     
+       
         glfwSwapBuffers(win.getWindow());
         glfwPollEvents();
     }

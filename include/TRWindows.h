@@ -1,6 +1,12 @@
 #pragma once
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+/*
+TRWindows 类
+负责窗口(上下文)的管理 
+包括窗口的创建销毁和设置当前窗口
+
+*/
 namespace TREngine{
     class TRWindows
     {
