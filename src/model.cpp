@@ -39,18 +39,17 @@ namespace TREngine{
     // texture coord attribute
              glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
             glEnableVertexAttribArray(2);
-        std:: cout<<sizeof(GLVector)<<std::endl;
-        std::cout<<8*sizeof(float)<<std::endl;
+    
        
 
     }
     void model::draw(GLShader &shader){
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture);
-        shader.use();
+        //shader.use();
         
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, indextri.size(), GL_UNSIGNED_INT, 0);
     }
     model::~model(){
         glDeleteVertexArrays(1, &VAO);
@@ -73,7 +72,7 @@ namespace TREngine{
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         if (data)
         {
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
             glGenerateMipmap(GL_TEXTURE_2D);
         }
         else

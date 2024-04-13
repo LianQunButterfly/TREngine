@@ -3,6 +3,7 @@
 #include "vector"
 #include "glshader.h"
 #include "stb_image.h"
+
 struct GLVector{
     float x,y,z;
     float r,g,b;
