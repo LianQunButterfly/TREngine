@@ -5,8 +5,7 @@ project(TREngine)
 include_directories(vendor/GLFW/include)
 include_directories(vendor/glad/include)
 include_directories(include)
-include_directories(vendor/glm-master
-)
+include_directories(vendor/glm-master)
 # 添加你的源文件和头文件
 file(GLOB_RECURSE SOURCE_FILES "src/*.cpp" "src/*.cxx" "src/*.c" "src/*.cc")
 file(GLOB_RECURSE HEADER_FILES "include/*.h" "include/*.hpp" "include/*.hxx")

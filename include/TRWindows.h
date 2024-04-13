@@ -17,6 +17,7 @@ namespace TREngine{
             void Init();
             void createWindow(int width, int height, const char* title);
             void setThisCurrent();
+            void gladInit();
             GLFWwindow* getWindow(){
                 return m_window;
             };
