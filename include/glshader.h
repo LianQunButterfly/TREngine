@@ -24,7 +24,17 @@ namespace TREngine
         void setVec3(const std::string name, glm::vec3 value) {
             glUniform3fv(glGetUniformLocation(ID, name.c_str()), 1, glm::value_ptr(value));
         }
-  
+        //这只uniform变量
+        void setFloat(const std::string name, float value) {
+            glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
+        }
+        void setInt(const std::string name, int value) {
+            glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
+        }
+        void setBool(const std::string name, bool value) {
+            //设置bool变量
+            glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
+        }
       
     private:
         unsigned int ID;

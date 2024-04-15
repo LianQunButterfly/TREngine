@@ -68,5 +68,7 @@
         "xlocmon": "cpp",
         "xloctime": "cpp",
         "xtree": "cpp"
-    }
+    },
+    "Codegeex.Privacy": true,
+    "Codegeex.OnlyKeyControl": true
 }

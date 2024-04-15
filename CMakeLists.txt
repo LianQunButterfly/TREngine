@@ -13,7 +13,6 @@ file(GLOB_RECURSE GLAD "vendor/glad/include/glad/glad.h" "vendor/glad/include/KH
 # 添加依赖库
 find_package(OpenGL REQUIRED)
 
-
 # 添加可执行文件
 add_executable(TREngine ${SOURCE_FILES} ${HEADER_FILES} ${GLAD})
 target_link_libraries(TREngine PUBLIC lib/glfw3
