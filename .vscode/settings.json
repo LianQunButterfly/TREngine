@@ -67,7 +67,19 @@
         "xlocmes": "cpp",
         "xlocmon": "cpp",
         "xloctime": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "numeric": "cpp",
+        "queue": "cpp",
+        "set": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "unordered_set": "cpp"
     },
     "Codegeex.Privacy": true,
     "Codegeex.OnlyKeyControl": true

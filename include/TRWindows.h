@@ -18,6 +18,9 @@ namespace TREngine{
             void createWindow(int width, int height, const char* title);
             void setThisCurrent();
             void gladInit();
+            bool is_close(){
+             return !glfwWindowShouldClose(m_window) ;
+            };
             GLFWwindow* getWindow(){
                 return m_window;
             };

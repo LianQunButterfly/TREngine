@@ -3,7 +3,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/vendor/glad/include",
+                "${workspaceFolder}/include"
             ],
             "defines": [
                 "_DEBUG",
