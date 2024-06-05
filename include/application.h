@@ -24,6 +24,7 @@ namespace TREngine{
         private:
             void renderAF();
             void renderBE();
+            TerrainGen *tg ;
             TRWindows *windows;
             Camera *cam;
             TerrainModel * tmodel;

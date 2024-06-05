@@ -11,7 +11,7 @@ namespace TREngine{
     class TerrainModel{
         public :
             TerrainModel();
-            void readdata(std::vector<float> &data, std::vector<int> &index);
+            void readdata(std::vector<float> &data, std::vector<unsigned int> &index);
             void renderDate(GLShader *shader, Camera *cam);
         
         private:
@@ -25,7 +25,7 @@ namespace TREngine{
             void readfile(const std::string &path);
             void genTrangle();
             std::vector<float> data;
-            std::vector<int> index;
+            std::vector<unsigned int> index;
         private:
             cv::Mat image;
             void putPointXYZ(Point p){
@@ -33,5 +33,9 @@ namespace TREngine{
                 data.push_back(p.y);
                 data.push_back(p.z);
             };
+            void putindex(int x, int y, int colow) {
+                index.push_back(x + y * colow);
+            }
+            
     };
 }

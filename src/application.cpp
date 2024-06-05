@@ -2,20 +2,21 @@
 namespace TREngine{
     void application::run(){
         //渲染顺序 先渲染UI 在渲染3D物体
-        TerrainGen tg = TerrainGen();
-        tg.readfile("TRmin.jpg");
-        tg.genTrangle();
-    tmodel->readdata(tg.data,tg.index);
+      //  TerrainGen tg = TerrainGen();
+   //     tg.readfile("TRmin.jpg");
+   //     tg.genTrangle();
+   //     tmodel->readdata(tg.data,tg.index);
      GLShader shader = GLShader("TR.vs","TR.fs");
      float deltaTime = 0.0f;	// time between current frame and last frame
      float lastFrame = 0.0f;
      glEnable(GL_DEPTH_TEST);
-
+      gui->shader = &shader;
     while(windows->is_close()){
           float currentFrame = static_cast<float>(glfwGetTime());
           deltaTime = currentFrame - lastFrame;
           lastFrame = currentFrame;
-          cam->updata(windows->getWindow(),deltaTime);
+        //  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+          //cam->updata(windows->getWindow(),deltaTime);
           renderBE();
           gui->render();
        
@@ -50,6 +51,10 @@ namespace TREngine{
          cam = new Camera((glm::vec3(0.0f, 0.0f, 3.0f)));
           gui->cam = cam;
          tmodel = new TerrainModel();
+         tg = new TerrainGen();
+         gui->tmodel = tmodel;
+         gui->tg = tg;
+
 
     }
 

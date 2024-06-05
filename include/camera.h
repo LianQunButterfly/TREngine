@@ -31,11 +31,18 @@ class Camera{
         return glm::lookAt(Position, Position + Front, Up);
     }
     void updata(GLFWwindow *window,float deltaTime);
+    void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch );
+    void ProcessMouseScroll(float yoffset);
+
     void setPathSetYaw(float path, float yaw);
     glm::vec3 getPos(){
         return Position;
     }
     void SetZoom(float zoom);
+    float getZoom(){
+        return Zoom;
+    }
+    void updatabyGUI(const std::string cmd,float deltaTime);
 
 private:
     glm::vec3 Position;
