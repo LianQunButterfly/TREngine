@@ -45,7 +45,7 @@ namespace TREngine{
        
         ImGui::End();
 
-		ImGui::ShowDemoWindow(&showdemo);
+		//ImGui::ShowDemoWindow(&showdemo);
 		ImGui::Render();
    
     }
